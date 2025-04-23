@@ -5,7 +5,7 @@ services:
     image: postgres:15
     container_name: postgres_container
     environment:
-      POSTGRES_DB: rideshare
+      POSTGRES_DB: miniProj2
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -35,9 +35,9 @@ services:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_DATA_MONGODB_HOST=mongo
       - SPRING_DATA_MONGODB_PORT=27017
-      - SPRING_DATA_MONGODB_DATABASE=ratingdb
-      - SPRING_DATA_MONGODB_URI=mongodb://root:example@mongo:27017/ratingdb?authSource=admin
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/rideshare
+      - SPRING_DATA_MONGODB_DATABASE=miniProj2db
+      - SPRING_DATA_MONGODB_URI=mongodb://root:example@mongo:27017/miniProj2db?authSource=admin
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/miniProj2
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
