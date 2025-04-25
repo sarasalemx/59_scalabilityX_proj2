@@ -1,6 +1,16 @@
 package com.example.demo.repositories;
 
 import com.example.demo.models.Rating;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface RatingRepository extends CrudRepository<Rating, Long> {}
+import java.util.List;
+
+public interface RatingRepository extends MongoRepository<Rating, String> {
+
+    // Find ratings for a specific entity (by ID and type)
+    List<Rating> findByEntityIdAndEntityType(Long entityId, String entityType);
+
+    // Find ratings with score greater than value
+    List<Rating> findByScoreGreaterThan(int minScore);
+}
+
